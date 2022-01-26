@@ -2,7 +2,7 @@ import React from "react";
 
 import { InputStyle } from "./styles";
 
-export function Input({ label, ...otherProps }) {
+export function Input({...otherProps }) {
   return (
       <InputStyle {...otherProps}></InputStyle>
   );

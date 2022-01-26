@@ -65,7 +65,9 @@ function Login() {
     }),
     onSubmit: () => {
       // alert(JSON.stringify(values, null, 2));
+      alert("Logado")
       history('/dashboard')
+      
     },
   });
 

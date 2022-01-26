@@ -1,26 +1,40 @@
 import React from "react";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import Unidades from "../../components/Cards";
 import Menu from "../../components/Menu";
+import { Container } from "./styles";
 
-import { Container, ContainerDashboard,  Header, Cards } from "./styles";
+// import Container from "../../components/Container";
 
 function Dashboard() {
+  const [units, setUnits] = useState([]);
+
+  useEffect(() => {
+    async function energyAPI() {
+      try {
+        const response = await axios.get("http://localhost:4000/unidades");
+        setUnits(response.data);
+      } catch (err) {
+        alert(err);
+      }
+    }
+    energyAPI();
+  }, []);
+
+  // console.log(units);
+  
+
   return (
-    <>
+  
       <Container>
         <Menu />
-        <ContainerDashboard>
-          <Header>
-            <h1>Dashboard</h1>
-          </Header>
-          <Cards>
-            <div>Total unidades</div>
-            <div>Unidades ativas</div>
-            <div>Unidades inativas</div>
-            <div>Média de energia</div>
-          </Cards>
-        </ContainerDashboard>
+          <Unidades 
+          data={units}
+          ></Unidades>
+   
       </Container>
-    </>
+   
   );
 }
 
