@@ -5,7 +5,7 @@ import { DashboardProvider } from "./contexts/Dashboard";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Units from "./pages/Unidades";
-import CadastroUnidades from "./pages/CadastroUnidades"
+import CadastroUnidades from "./pages/CadastroDeUnidades"
 import Register from "./pages/CadastroEnergia";
 
 function App() {
