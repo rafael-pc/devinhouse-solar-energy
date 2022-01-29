@@ -4,22 +4,17 @@
       "apelido": "apelido",
       "local": "Local",
       "marca": "Marca",
-      "modelo": "Modelo",
-      "id": 3
-    },
-    {
-      "apelido": "apelido",
-      "local": "Local",
-      "marca": "Marca",
-      "modelo": "Modelo",
-      "id": 4
+      "modelo": 56,
+      "status": "on",
+      "id": 2
     },
     {
       "apelido": "Xbox",
       "local": "Seattle",
-      "marca": "Microsoft",
-      "modelo": "Series",
-      "id": 5
+      "marca": "Marca",
+      "modelo": 70,
+      "status": "inativo",
+      "id": 3
     }
   ],
   "geracoes": [
@@ -34,6 +29,34 @@
       "date": "",
       "energy": "dddd",
       "id": 2
+    },
+    {
+      "unidade": "",
+      "date": "2022-01-06",
+      "energy": "90",
+      "id": 3
+    },
+    {
+      "unidade": "",
+      "date": "2022-01-06",
+      "id": 4
+    },
+    {
+      "unidade": "",
+      "date": "2022-01-06",
+      "id": 5
+    },
+    {
+      "unidade": "1",
+      "date": "2022-01-12",
+      "energia": "89",
+      "id": 6
+    },
+    {
+      "unidade": "2",
+      "date": "2022-01-05",
+      "energia": "89",
+      "id": 7
     }
   ]
 }

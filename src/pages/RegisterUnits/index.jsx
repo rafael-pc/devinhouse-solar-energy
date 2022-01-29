@@ -16,6 +16,7 @@ function RegisterUnits() {
     local: "",
     marca: "",
     modelo: "",
+    status: "inativo",
   });
   
 
@@ -26,7 +27,8 @@ function RegisterUnits() {
         apelido: data.apelido,
         local: data.local,
         marca: data.marca,
-        modelo: data.modelo,
+        modelo: parseInt(data.modelo),
+        status: data.status,
       })
       .then((resp) => resp.data);
   }
@@ -77,7 +79,11 @@ function RegisterUnits() {
             id="modelo"
 
           ></Input>
-          <input type="checkbox" />
+          <input 
+          onChange={(e)=> handle(e)}
+          type="checkbox" 
+          id="status"
+          />
 
           <input type="submit" value="Cadastar"></input>
         </form>

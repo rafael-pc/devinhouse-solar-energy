@@ -34,6 +34,16 @@ function RegisterMonthly() {
   //   e.preventDefault()
   //   handlePostData()
   // }
+  const [units, setUnits] = useState([]);
+
+  useEffect(() => {
+    function getData() {
+      axios
+        .get("http://localhost:4000/unidades")
+        .then((resp) => setUnits(resp.data));
+    }
+    getData();
+  }, []);
 
   const url = "http://localhost:4000/geracoes"
   const [data, setData] = useState({
@@ -47,7 +57,7 @@ function RegisterMonthly() {
     axios.post(url, {
       unidade: data.unidade,
       date: data.date,
-      energy: data.energy
+      energia: data.energia,
     })
     .then(resp => (resp.data))
   }
@@ -74,16 +84,15 @@ function RegisterMonthly() {
             Unidade Geradora
             <select
               defaultValue=""
-              // onChange={(e) => {
-              //   setId(e.target.value)
-              // }}
+              onChange={(e)=> handle(e)}
+              id="unidade"
             >
               <option value="" disabled>
                 Selecione
               </option>
-              {/* {data.map((unidade)=>{
+              {units.map((unidade)=>{
               return <option value={unidade.id}>{unidade.apelido}</option>
-            })} */}
+            })}
             </select>
           </label>
           <label>
@@ -99,7 +108,7 @@ function RegisterMonthly() {
             <input
               type="text"
               onChange={(e)=> handle(e)}
-              id="energy"
+              id="energia"
             ></input>
           </label>
           <input type="submit" value="Cadastar"></input>

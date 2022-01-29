@@ -7,7 +7,7 @@ function Unidades({ data }) {
   //   console.log(data.length);
 
   let total = data.reduce((total, valor) => total + valor.modelo, 0) / data.length;
-  let ativo = data.filter((unit) => unit.status === "ativo");
+  let ativo = data.filter((unit) => unit.status === "on");
   let inativo = data.filter((unit) => unit.status === "inativo");
 
   return (
@@ -28,7 +28,7 @@ function Unidades({ data }) {
         </div>
         <div>
           <h3>Média de energia</h3>
-          <span>{total + " Kw"}</span>
+          <span>{total.toFixed(1) + " Kw"}</span>
         </div>
       </Cards>
     </ContainerContent>
