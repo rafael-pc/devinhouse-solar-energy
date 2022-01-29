@@ -22,7 +22,7 @@ function Menu() {
           <h3>Unidade consumidora</h3>
         </Units>
       </Link>
-      <Link to="/register" className="link">
+      <Link to="/register_monthly" className="link">
         <Register>
           <FaCog className="cog"/>
           <h3>Cadastro de enérgia gerada</h3>

@@ -1,11 +1,30 @@
-import { createContext } from "react";
+import React,{ createContext, useState } from "react";
 // import { v4 as uuidv4 } from "uuid";
 
-export const DashboardContext = createContext([]);
+export const UnitsRegisterContext = createContext([]);
 
-export function DashboardProvider({ children }) {
+export function UnitsRegisterProvider({ children }) {
 //   const [details, setDetails] = useState([]);
-//   const [cart, setCart] = useState([]);
+  // const [units, setUnit] = useState([]);
+
+
+  // function handleAddUnit(unit) {
+
+  //   const newUnit = {
+  //     ...unit,
+  //   }
+ 
+
+  //   setUnit([...units, newUnit])
+  //   // localStorage.setItem("cart", JSON.stringify([...units, unit]));
+  //   // alert('Adicionado no carrinho')
+    
+  // }
+  function handleAPI(unit) {
+      
+
+    
+  }
 
 //   function handleDetails(data) {
 //     const description = {
@@ -34,14 +53,17 @@ export function DashboardProvider({ children }) {
 //   }
 
   return (
-    <DashboardContext.Provider
+    <UnitsRegisterContext.Provider
+      // value={{
+      //   units: units,
+      //   addItem: handleAddUnit,
+      //   // removeItem: handleRemoveItemInCart,
+      // }}
       value={{
-        // details: details,
-        // addDetails: handleDetails,
-        // removeItem: handleRemoveItemInCart,
+        api: handleAPI,
       }}
     >
       {children}
-    </DashboardContext.Provider>
+    </UnitsRegisterContext.Provider>
   );
 }

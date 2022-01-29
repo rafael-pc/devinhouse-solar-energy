@@ -1,25 +1,26 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { DashboardProvider } from "./contexts/Dashboard";
 
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
-import Units from "./pages/Unidades";
-import CadastroUnidades from "./pages/CadastroDeUnidades"
-import Register from "./pages/CadastroEnergia";
+import Units from "./pages/Units";
+import RegisterUnits from "./pages/RegisterUnits"
+import RegisterMonthly from "./pages/RegisterMonthly";
+
+import { UnitsRegisterProvider } from './contexts/CadastroDeUnidades';
 
 function App() {
   return (
     <>
-      <DashboardProvider>
+      <UnitsRegisterProvider>
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/units" element={<Units />} />
-          <Route path="/register_units" element={<CadastroUnidades />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/units/:id" element={<RegisterUnits />} />
+          <Route path="/register_monthly" element={<RegisterMonthly />} />
         </Routes>
-      </DashboardProvider>
+      </UnitsRegisterProvider>
     </>
   );
 }

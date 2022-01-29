@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaRegEnvelope, FaLock } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Input from "../../components/Input";
 
 import * as yup from "yup";
@@ -92,7 +92,7 @@ function Login() {
             ></Input>
 
             <Submit type="submit">Entrar</Submit>
-            <Link to="/dashboard" className="submit"></Link>
+          
           </Form>
         </Logon>
       </ContainerLogon>

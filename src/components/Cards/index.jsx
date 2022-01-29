@@ -6,7 +6,7 @@ import { ContainerContent, Cards } from "./styles";
 function Unidades({ data }) {
   //   console.log(data.length);
 
-  let total = data.reduce((total, valor) => total + valor.energia, 0) / data.length;
+  let total = data.reduce((total, valor) => total + valor.modelo, 0) / data.length;
   let ativo = data.filter((unit) => unit.status === "ativo");
   let inativo = data.filter((unit) => unit.status === "inativo");
 
