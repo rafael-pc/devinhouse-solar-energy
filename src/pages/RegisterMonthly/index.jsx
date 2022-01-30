@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from "react";
+import {
+  Container,
+  ContainerContent,
+  Form,
+  Input,
+  Submit,
+  Select,
+} from "./styles";
+
+import axios from "axios";
 import Menu from "../../components/Menu";
 import Header from "../../components/Header";
-// import Input from "../../components/Input";
-// import Container from "../../components/Container";
-
-import { Container, ContainerContent, Form, Input, Submit, Select } from "./styles";
-import axios from "axios";
 
 function RegisterMonthly() {
-
   const [units, setUnits] = useState([]);
 
   useEffect(() => {
@@ -33,7 +37,7 @@ function RegisterMonthly() {
       .post(url, {
         unidade: data.unidade,
         date: data.date,
-        energia: data.energia,
+        energia: parseInt(data.energia),
       })
       .then((resp) => resp.data);
   }
@@ -42,7 +46,6 @@ function RegisterMonthly() {
     const newData = { ...data };
     newData[e.target.id] = e.target.value;
     setData(newData);
-    console.log(newData);
   }
 
   return (
@@ -62,12 +65,21 @@ function RegisterMonthly() {
               Selecione
             </option>
             {units.map((unidade, index) => {
-              return <option key={index} value={unidade.id}>{unidade.apelido}</option>;
+              return (
+                <option key={index} value={unidade.id}>
+                  {unidade.apelido}
+                </option>
+              );
             })}
           </Select>
 
           <label>Mês/ano</label>
-          <Input type="date" onChange={(e) => handle(e)} id="date"></Input>
+          <Input
+            type="date"
+            onChange={(e) => handle(e)}
+            id="date"
+            className="date"
+          ></Input>
 
           <label>Total Kw gerado</label>
           <Input type="text" onChange={(e) => handle(e)} id="energia"></Input>

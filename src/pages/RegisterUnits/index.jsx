@@ -1,12 +1,10 @@
 import React, { useState } from "react";
+import { Container, ContainerContent, Form, Checkbox, Submit } from "./styles";
+
 import Header from "../../components/Header";
 import Menu from "../../components/Menu";
 import Input from "../../components/Input";
 import axios from "axios";
-
-// import { UnitsRegisterContext } from "../../contexts/CadastroDeUnidades";
-
-import { Container, ContainerContent, Form, Checkbox, Submit } from "./styles";
 
 function RegisterUnits() {
   const url = "http://localhost:4000/unidades";
@@ -35,7 +33,6 @@ function RegisterUnits() {
     const newData = { ...data };
     newData[e.target.id] = e.target.value;
     setData(newData);
-    console.log(newData);
   }
 
   return (
@@ -49,40 +46,36 @@ function RegisterUnits() {
             handleSubmit(e);
           }}
         >
-          {/* <label>Apelido</label> */}
           <Input
+            width={"50%"}
             label="Apelido"
-            // placeholder="Apelido"
             onChange={(e) => handle(e)}
             type="text"
             id="apelido"
           ></Input>
-          {/* <label>Local</label> */}
           <Input
             label="Local"
-            // placeholder="Local"
             onChange={(e) => handle(e)}
             type="text"
             id="local"
           ></Input>
-          {/* <label>Marca</label> */}
           <Input
             label="Marca"
-            // placeholder="Marca"
             onChange={(e) => handle(e)}
             type="text"
             id="marca"
           ></Input>
-          {/* <label>Modelo</label> */}
           <Input
             label="Modelo"
-            // placeholder="Modelo"
             onChange={(e) => handle(e)}
             type="text"
             id="modelo"
           ></Input>
-          <Checkbox onChange={(e) => handle(e)} type="checkbox" id="status" />
-          <label>Ativo</label>
+
+          <label>
+            <Checkbox onChange={(e) => handle(e)} type="checkbox" id="status" />{" "}
+            Ativo
+          </label>
           <Submit type="submit">Salvar</Submit>
         </Form>
       </ContainerContent>

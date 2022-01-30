@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { FaRegEnvelope, FaLock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import Input from "../../components/Input";
 
+import Input from "../../components/Input";
 import * as yup from "yup";
 
 import {
@@ -27,15 +27,18 @@ function Login() {
     event.preventDefault();
 
     let currentErros = {};
+
     if (!email) {
-      currentErros.email = "email é obrigatorio";
+      currentErros.email = "E-mail é obrigatorio.";
     }
     if (!password) {
-      currentErros.password = "senha é obrigatoria";
+      currentErros.password = "Senha é obrigatoria.";
     }
     if (password.length < 8 && password.length > 0) {
-      currentErros.password = "Senha muito curta de ter no minimo 8 digitos";
+      currentErros.password =
+        "Senha muito curta, deve ter no minimo 8 digitos.";
     }
+    
     setErrors(currentErros);
 
     let addressFormData = {
@@ -47,10 +50,9 @@ function Login() {
       if (valid === true) {
         history("/dashboard");
       }
-
-      console.log("Valor válido:", valid);
     });
   }
+  
   const history = useNavigate();
 
   const addressSchema = yup.object().shape({
@@ -61,7 +63,7 @@ function Login() {
   return (
     <Container>
       <ContainerImage>
-        <Image></Image>
+        <Image/>
       </ContainerImage>
       <ContainerLogon>
         <Logon>
@@ -92,7 +94,6 @@ function Login() {
             ></Input>
 
             <Submit type="submit">Entrar</Submit>
-          
           </Form>
         </Logon>
       </ContainerLogon>

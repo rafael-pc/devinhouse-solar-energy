@@ -7,21 +7,13 @@ import Menu from "../../components/Menu";
 import Linechart from "../../components/Chart";
 import Header from "../../components/Header";
 
-
-
 function Dashboard() {
   const [units, setUnits] = useState([]);
-
-  // const { units } = useContext(UnitsRegisterContext);
-
-  // const params = useParams();
 
   useEffect(() => {
     async function energyAPI() {
       try {
-        const response = await axios.get(
-          `http://localhost:4000/unidades`
-        );
+        const response = await axios.get(`http://localhost:4000/unidades`);
         setUnits(response.data);
       } catch (err) {
         alert(err);
@@ -29,9 +21,6 @@ function Dashboard() {
     }
     energyAPI();
   }, []);
- 
-
-  // console.log(units);
 
   return (
     <Container>

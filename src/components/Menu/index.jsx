@@ -1,8 +1,7 @@
 import React from "react";
+import LogoImage from "../../images/logo.png";
 import { Link } from "react-router-dom";
 import { Container, Logo, Dashboard, Register, Units } from "./styles";
-import LogoImage from "../../images/logo.png";
-
 import { FaChartPie, FaChartBar, FaCog } from "react-icons/fa";
 
 function Menu() {

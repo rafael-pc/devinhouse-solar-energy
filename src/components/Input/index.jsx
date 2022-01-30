@@ -1,12 +1,11 @@
 import React from "react";
-
 import { InputStyle, ErrorMessage, ContainerInput, Label } from "./styles";
 
-export function Input({ icon, errorMessage, label, ...otherProps }) {
+export function Input({ icon, errorMessage, label, width, ...otherProps }) {
   return (
     <>
       <Label>{label}</Label>
-      <ContainerInput errorMessage={errorMessage}>
+      <ContainerInput errorMessage={errorMessage} style={{width: width}}>
         {icon}
         <InputStyle {...otherProps}></InputStyle>
       </ContainerInput>

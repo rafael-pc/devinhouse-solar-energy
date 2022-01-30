@@ -1,62 +1,78 @@
 import styled from "styled-components";
-// import LogoImage from "../../images/Logo.png";
 
 export const Container = styled.div`
-  background-color: #fafafa;
   display: flex;
   width: 100vw;
   height: 100vh;
-`;
-export const ContainerContent = styled.div`
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
-    width: 80%;
-    height: 100vh;
-    /* background-color: greenyellow; */
+  background-color: #fafafa;
 
-    h3{
-      /* text-align: center; */
-      margin-left: 50px;
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+  }
+`;
+
+export const ContainerContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100vh;
+  background-color: #fafafa;
+
+  .apelido {
+    width: 50%;
+  }
+
+  h3 {
+    margin-left: 50px;
+    padding: 30px;
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+  label {
+    padding: 10px;
+    font-weight: bold;
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 100vw;
+    h3 {
+      margin-left: 0;
       padding: 20px;
-      font-size: 1.3em;
-      font-weight: bold;
-      margin-top: 50px;
+      text-align: center;
     }
-    label{
-        margin-top: 20px;
-        padding: 15px;
-        font-weight: bold;
-        /* background-color: #7373ff; */
+    label {
+      margin-top: 0;
+      padding: 0;
     }
+  }
 `;
 
 export const Form = styled.form`
+  width: 50%;
+  padding: 20px;
+  margin-left: 50px;
 
-    width: 50%;
-    padding: 20px;
-    margin-left: 50px;
- 
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 0;
+    width: 90%;
+  }
 `;
 
 export const Checkbox = styled.input`
-  margin-top: 40px;
-
+  margin-top: 15px;
 `;
 
 export const Submit = styled.button`
-  background-color: #4C5DF1;
   display: block;
-  color: #fff;
   border: none;
   width: 150px;
   padding: 15px;
-  margin-top: 80px;
- 
+  margin-top: 20px;
   font-weight: bold;
   border-radius: 15px;
-  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
-
+  color: #fff;
+  background-color: #4c5df1;
 `;
-

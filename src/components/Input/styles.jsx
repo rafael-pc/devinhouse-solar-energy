@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-// export const Container = styled.div`
-
-// `;
-
 export const InputStyle = styled.input`
   flex: 1 0;
   font-size: 1.2em;
@@ -14,18 +10,27 @@ export const InputStyle = styled.input`
   &:focus {
     outline: none;
   }
+
+  @media only screen and (max-width: 600px) {
+    width: 100px;
+  }
 `;
 
 export const ErrorMessage = styled.div`
   color: #dc3545;
-  font-size: 1em;
+  font-size: 0.9em;
   padding: 5px;
 `;
 
 export const Label = styled.div`
-  padding: 17px;
+  padding: 10px;
   font-weight: bold;
   font-size: 1.1em;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 1em;
+    padding: 5px;
+  }
 `;
 
 export const ContainerInput = styled.div`
@@ -49,6 +54,10 @@ export const ContainerInput = styled.div`
     height: 30px;
     color: #a8a8a8;
   }
+  @media only screen and (max-width: 600px) {
+    height: 35px;
+  }
+
   @media only screen and (max-width: 400px) {
     .envelope-icon {
       display: none;

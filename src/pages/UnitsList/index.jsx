@@ -1,7 +1,5 @@
 // import React, { useContext } from "react";
-import Header from "../../components/Header";
-import Menu from "../../components/Menu";
-
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Container,
@@ -13,12 +11,10 @@ import {
   Delete,
   NewUnit,
 } from "./styles";
-// import { UnitsRegisterContext } from "../../contexts/CadastroDeUnidades";
 
-import React from "react";
 import axios from "axios";
-import { useState, useEffect } from "react";
-// import {useParams} from "react-router-dom"
+import Header from "../../components/Header";
+import Menu from "../../components/Menu";
 
 function Register() {
   const [data, setData] = useState([]);
@@ -34,7 +30,6 @@ function Register() {
 
   function removeUnit(unit) {
     axios.delete(`http://localhost:4000/unidades/${unit.id}`);
-
     removeFromTable(unit.id);
   }
 
@@ -68,7 +63,7 @@ function Register() {
             </tr>
           </THeader>
           <tbody>
-            {data.map((unit ,index) => (
+            {data.map((unit, index) => (
               <Row key={index}>
                 <td>{unit.id}</td>
                 <td>{unit.apelido}</td>
@@ -76,9 +71,7 @@ function Register() {
                 <td>{unit.marca}</td>
                 <td>{unit.modelo}W</td>
                 <td>
-                  {/* <Link to={`/edit/${unit.id}`}> */}
                   <Edit onChange={(e) => e.target.value}>editar</Edit>
-                  {/* </Link> */}
                 </td>
                 <td>
                   <Delete
@@ -94,7 +87,7 @@ function Register() {
           </tbody>
         </Table>
 
-        <Link to="/units/:id" className="">
+        <Link to="/units/:id">
           <NewUnit>Nova Unidade</NewUnit>
         </Link>
       </ContainerContent>

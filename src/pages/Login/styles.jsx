@@ -41,8 +41,6 @@ export const Logon = styled.div`
   align-items: center;
   width: 60%;
   height: 708.06px;
-
-  /* background-color: aqua; */
 `;
 
 export const Form = styled.form`
@@ -50,10 +48,6 @@ export const Form = styled.form`
   flex-direction: column;
   align-items: center;
   width: 70%;
-  /* height: 708.06px; */
-
-  /* background-color: greenyellow; */
-  
 `;
 
 export const Logo = styled.div`
@@ -74,18 +68,14 @@ export const Text = styled.p`
   color: #374557;
 `;
 
-
 export const Submit = styled.button`
-  /* width: 93.5%; */
-  min-width: 150px;
+  min-width: 90%;
   height: 50px;
-  /* font-weight: bold; */
   border-radius: 5px;
   font-size: 1.3em;
   margin-top: 30px;
   animation-duration: 0ms;
   color: #fff;
   background-color: #4cbc9a;
-
   border: none;
 `;
