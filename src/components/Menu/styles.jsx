@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  /* background-color: #fff; */
-  background-color: yellow;
+  background-color: #fff;
   width: 20vw;
   height: 100vh;
   display: flex;
@@ -13,6 +12,24 @@ export const Container = styled.div`
     list-style: none;
     text-decoration: none;
   }
+  /* .cont {
+    color: #fff;
+    border-radius: 10px;
+    background-color: #4cbc9a;
+  }
+  .cont h3{
+    color: #fff;
+  
+  } */
+  .cont2 {
+    color: #fff;
+    border-radius: 10px;
+    background-color: #4cbc9a;
+  }
+  .cont2 h3 {
+    color: #fff;
+  }
+
   @media only screen and (max-width: 1100px) {
     /* background-color: blue; */
     text-align: center;
@@ -24,7 +41,6 @@ export const Logo = styled.img`
   width: 209px;
   height: 209px;
   margin-bottom: 20px;
-  background-color: aliceblue;
 `;
 
 export const Dashboard = styled.div`
@@ -37,32 +53,32 @@ export const Dashboard = styled.div`
   gap: 30px;
   padding: 35px;
   border-radius: 10px;
-  background-color: blue;
   .chart-pie {
-    color: #A098AE;
+    color: #a098ae;
     font-size: 20px;
   }
-  &:hover .chart-pie{
+
+  &:hover .chart-pie {
     color: #fff;
   }
   h3 {
-    color: #A098AE;
+    color: #a098ae;
     font-weight: bold;
     font-size: 1.2em;
     line-height: 1.2em;
     width: 150px;
   }
-  &:hover h3{
+  &:hover h3 {
     color: #fff;
   }
   &:hover {
-    background-color: #4CBC9A;
+    background-color: #4cbc9a;
   }
   @media only screen and (max-width: 1100px) {
     /* background-color: blue; */
     text-align: center;
-    .chart-pie{
-        display: none;      
+    .chart-pie {
+      display: none;
     }
   }
 `;
@@ -78,34 +94,34 @@ export const Units = styled.div`
   padding: 35px;
   border-radius: 10px;
   .chart-bar {
-    color: #A098AE;
+    color: #a098ae;
     font-size: 20px;
   }
-  &:hover .chart-bar{
+  &:hover .chart-bar {
     color: #fff;
   }
-  &:hover img{
-    color: #fff
+  &:hover img {
+    color: #fff;
   }
   h3 {
-    color: #A098AE;
+    color: #a098ae;
     font-weight: bold;
     font-size: 1.2em;
     line-height: 1.2em;
     width: 150px;
   }
-  &:hover h3{
+  &:hover h3 {
     color: #fff;
   }
-  &:hover{
-    background-color: #4CBC9A;
+  &:hover {
+    background-color: #4cbc9a;
     color: #fff;
   }
   @media only screen and (max-width: 1100px) {
     /* background-color: blue; */
     text-align: center;
-    .chart-bar{
-        display: none;      
+    .chart-bar {
+      display: none;
     }
   }
 `;
@@ -120,32 +136,32 @@ export const Register = styled.div`
   gap: 30px;
   padding: 35px;
   border-radius: 10px;
-  .cog{
-    color: #A098AE;
+  .cog {
+    color: #a098ae;
     font-size: 20px;
   }
-  &:hover .cog{
+  &:hover .cog {
     color: #fff;
   }
   h3 {
-    color: #A098AE;
+    color: #a098ae;
     font-weight: bold;
     font-size: 1.2em;
     line-height: 1.2em;
     width: 150px;
   }
-  &:hover h3{
+  &:hover h3 {
     color: #fff;
   }
   &:hover {
-    background-color: #4CBC9A;
+    background-color: #4cbc9a;
     color: #fff;
   }
   @media only screen and (max-width: 1100px) {
     /* background-color: blue; */
     text-align: center;
-    .cog{
-        display: none;      
+    .cog {
+      display: none;
     }
   }
 `;

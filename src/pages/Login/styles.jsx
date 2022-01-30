@@ -42,7 +42,7 @@ export const Logon = styled.div`
   width: 60%;
   height: 708.06px;
 
-  background-color: aqua;
+  /* background-color: aqua; */
 `;
 
 export const Form = styled.form`
@@ -52,7 +52,7 @@ export const Form = styled.form`
   width: 70%;
   /* height: 708.06px; */
 
-  background-color: greenyellow;
+  /* background-color: greenyellow; */
   
 `;
 
@@ -74,82 +74,6 @@ export const Text = styled.p`
   color: #374557;
 `;
 
-// export const Email = styled.div`
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   padding: 5px;
-//   border: 1px solid;
-//   border-radius: 5px;
-//   width: 90%;
-//   height: 50px;
-//   margin-top: 30px;
-
-//   &:hover {
-//     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 1px;
-//   }
-//   .envelope-icon {
-//     width: 70px;
-//     height: 30px;
-//     color: #a8a8a8;
-//   }
-//   @media only screen and (max-width: 400px) {
-//     .envelope-icon {
-//       display: none;
-//     }
-//   }
-// `;
-
-// export const EmailInput = styled.input`
-//   flex: 1 0;
-//   font-size: 1.2em;
-//   background-color: transparent;
-//   padding-left: 5px;
-//   border: 0;
-
-//   &:focus {
-//     outline: none;
-//   }
-// `;
-
-// export const Password = styled.div`
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   padding: 5px;
-//   border: 1px solid;
-//   border-radius: 5px;
-//   width: 90%;
-//   height: 50px;
-//   margin-top: 30px;
-//   border: 1px solid #000000;
-
-//   &:hover {
-//     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 1px;
-//   }
-//   .lock-icon {
-//     width: 70px;
-//     height: 30px;
-//     color: #a8a8a8;
-//   }
-//   @media only screen and (max-width: 400px) {
-//     .lock-icon {
-//       display: none;
-//     }
-//   }
-// `;
-
-// export const PasswordInput = styled.input`
-//   flex: 1 0;
-//   font-size: 1.1em;
-//   background-color: transparent;
-//   padding-left: 5px;
-//   border: 0;
-
-//   &:focus {
-//     outline: none;
-//   }
-// `;
 
 export const Submit = styled.button`
   /* width: 93.5%; */

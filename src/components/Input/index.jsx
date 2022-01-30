@@ -1,15 +1,13 @@
 import React from "react";
 
-import { InputStyle, ErrorMessage, ContainerInput } from "./styles";
+import { InputStyle, ErrorMessage, ContainerInput, Label } from "./styles";
 
-export function Input({ icon, errorMessage, ...otherProps }) {
+export function Input({ icon, errorMessage, label, ...otherProps }) {
   return (
     <>
-      <ContainerInput
-      errorMessage={errorMessage}
-      >
+      <Label>{label}</Label>
+      <ContainerInput errorMessage={errorMessage}>
         {icon}
-
         <InputStyle {...otherProps}></InputStyle>
       </ContainerInput>
       <ErrorMessage>{errorMessage}</ErrorMessage>

@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
-
 export const ContainerContent = styled.div`
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
-    width: 81%;
-    height: 100vh;
-   
-    /* background-color: greenyellow; */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  width: 81%;
+  margin: 0 auto;
+  /* height: 100vh; */
+
+  /* background-color: greenyellow; */
 `;
 
 // export const Header = styled.div`
@@ -34,7 +34,7 @@ export const ContainerContent = styled.div`
 // `;
 
 export const Cards = styled.div`
-  background-color: red;
+  /* background-color: red; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -45,26 +45,48 @@ export const Cards = styled.div`
   gap: 30px;
   margin: 0 auto;
   margin-top: 30px;
-  
+
+  .card1:hover {
+    color: #3751ff;
+    border: 1px solid #3751ff;
+    cursor: pointer;
+  }
+  .card2:hover {
+    color: #3751ff;
+    border: 1px solid #3751ff;
+    cursor: pointer;
+
+  }
+  .card3:hover {
+    color: #3751ff;
+    border: 1px solid #3751ff;
+    cursor: pointer;
+  }
+  .card4:hover {
+    color: #3751ff;
+    border: 1px solid #3751ff;
+    cursor: pointer;
+  }
+
   div {
-      border-radius: 8px;
-      padding: 20px;
-      flex-basis: 250px;
-      border: 1px solid #d3d3d3;
-      /* width: 200px; */
-      color: #A098AE;
-      height: 140px;
-      font-weight: bolder;
-      /* background-color: #fff; */
-      background-color: aquamarine;
+    border-radius: 8px;
+    padding: 20px;
+    flex-basis: 250px;
+    border: 1px solid #d3d3d3;
+    /* width: 200px; */
+    color: #424242;
+    height: 140px;
+    font-weight: bolder;
+    /* background-color: #fff; */
+    /* background-color: aquamarine; */
   }
-  h3{
-      font-size: 1.1em;
-      padding: 8px;
+  h3 {
+    font-size: 1.1em;
+    padding: 8px;
   }
-  span{
+  span {
     font-size: 3.5em;
-    background-color: yellow;
+    /* background-color: yellow; */
     /* margin-top: 50px; */
   }
 `;

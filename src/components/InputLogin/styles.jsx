@@ -18,14 +18,3 @@ export const InputStyle = styled.input`
   }
 `;
 
-// export const PasswordInput = styled.input`
-//   flex: 1 0;
-//   font-size: 1.2em;
-//   background-color: transparent;
-//   padding-left: 5px;
-//   border: 0;
-
-//   &:focus {
-//     outline: none;
-//   }
-// `;

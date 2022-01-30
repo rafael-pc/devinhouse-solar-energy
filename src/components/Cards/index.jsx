@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../Header";
 
 import { ContainerContent, Cards } from "./styles";
 
@@ -12,23 +11,23 @@ function Unidades({ data }) {
 
   return (
     <ContainerContent>
-      <Header title="Dashboard"></Header>
+      {/* <Header title="Dashboard"></Header> */}
       <Cards>
-        <div>
+        <div className="card1">
           <h3>Total unidades</h3>
           <span>{data.length}</span>
         </div>
-        <div>
+        <div className="card2">
           <h3>Unidades ativas</h3>
           <span>{ativo.length}</span>
         </div>
-        <div>
+        <div className="card3">
           <h3>Unidades inativas</h3>
           <span>{inativo.length}</span>
         </div>
-        <div>
+        <div className="card4">
           <h3>Média de energia</h3>
-          <span>{total.toFixed(1) + " Kw"}</span>
+          <span>{total.toFixed(0) + " kW"}</span>
         </div>
       </Cards>
     </ContainerContent>

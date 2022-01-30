@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Header from "../../components/Header";
 import Menu from "../../components/Menu";
 import Input from "../../components/Input";
@@ -6,10 +6,9 @@ import axios from "axios";
 
 // import { UnitsRegisterContext } from "../../contexts/CadastroDeUnidades";
 
-import { Container, ContainerContent } from "./styles";
+import { Container, ContainerContent, Form, Checkbox, Submit } from "./styles";
 
 function RegisterUnits() {
-
   const url = "http://localhost:4000/unidades";
   const [data, setData] = useState({
     apelido: "",
@@ -18,7 +17,6 @@ function RegisterUnits() {
     modelo: "",
     status: "inativo",
   });
-  
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -45,48 +43,48 @@ function RegisterUnits() {
       <Menu />
       <ContainerContent>
         <Header title="Unidades"></Header>
-        <form
-            onSubmit={(e) => {
-              handleSubmit(e)
-            }}
+        <h3>Cadasto de Unidade Geradora</h3>
+        <Form
+          onSubmit={(e) => {
+            handleSubmit(e);
+          }}
         >
-          <label>Apelido</label>
+          {/* <label>Apelido</label> */}
           <Input
-            placeholder="Apelido"
-            onChange={(e)=> handle(e)}
+            label="Apelido"
+            // placeholder="Apelido"
+            onChange={(e) => handle(e)}
             type="text"
             id="apelido"
           ></Input>
-          <label>Local</label>
+          {/* <label>Local</label> */}
           <Input
-            placeholder="Local"
-            onChange={(e)=> handle(e)}
+            label="Local"
+            // placeholder="Local"
+            onChange={(e) => handle(e)}
             type="text"
             id="local"
           ></Input>
-          <label>Marca</label>
+          {/* <label>Marca</label> */}
           <Input
-            placeholder="Marca"
-            onChange={(e)=> handle(e)}
+            label="Marca"
+            // placeholder="Marca"
+            onChange={(e) => handle(e)}
             type="text"
             id="marca"
           ></Input>
-          <label>Modelo</label>
+          {/* <label>Modelo</label> */}
           <Input
-            placeholder="Modelo"
-            onChange={(e)=> handle(e)}
+            label="Modelo"
+            // placeholder="Modelo"
+            onChange={(e) => handle(e)}
             type="text"
             id="modelo"
-
           ></Input>
-          <input 
-          onChange={(e)=> handle(e)}
-          type="checkbox" 
-          id="status"
-          />
-
-          <input type="submit" value="Cadastar"></input>
-        </form>
+          <Checkbox onChange={(e) => handle(e)} type="checkbox" id="status" />
+          <label>Ativo</label>
+          <Submit type="submit">Salvar</Submit>
+        </Form>
       </ContainerContent>
     </Container>
   );
