@@ -5,7 +5,7 @@
       "local": "Rua 5",
       "marca": "Canadian",
       "modelo": 155,
-      "status": "on",
+      "status": "ativo",
       "id": 1
     },
     {
@@ -13,7 +13,7 @@
       "local": "Rua 15",
       "marca": "Risen",
       "modelo": 100,
-      "status": "on",
+      "status": "inativo",
       "id": 2
     },
     {
@@ -29,16 +29,8 @@
       "local": "São Paulo",
       "marca": "Hanwha",
       "modelo": 100,
-      "status": "on",
+      "status": "ativo",
       "id": 4
-    },
-    {
-      "apelido": "Painel 5",
-      "local": "Rua 17",
-      "marca": "Risen",
-      "modelo": 300,
-      "status": "inativo",
-      "id": 5
     }
   ],
   "geracoes": [

@@ -78,4 +78,5 @@ export const Submit = styled.button`
   color: #fff;
   background-color: #4cbc9a;
   border: none;
+  cursor: pointer;
 `;

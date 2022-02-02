@@ -87,7 +87,7 @@ function Register() {
           </tbody>
         </Table>
 
-        <Link to="/units/:id">
+        <Link to="/units/:id" className="link">
           <NewUnit>Nova Unidade</NewUnit>
         </Link>
       </ContainerContent>

@@ -44,9 +44,11 @@ export const Cards = styled.div`
     padding: 20px;
     flex-basis: 250px;
     border: 1px solid #d3d3d3;
-    color: #424242;
     height: 140px;
     font-weight: bolder;
+    color: #424242;
+    background-color: #fff;
+    
   }
   h3 {
     font-size: 1.1em;

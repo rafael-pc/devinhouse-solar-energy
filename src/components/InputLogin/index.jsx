@@ -1,9 +1,16 @@
 import React from "react";
-import { InputStyle } from "./styles";
+import { InputStyle, ErrorMessage, ContainerInput, Label } from "./styles";
 
-export function InputLogin({...otherProps }) {
+export function InputLogin({ icon, errorMessage, label, width, ...otherProps }) {
   return (
-      <InputStyle {...otherProps}></InputStyle>
+    <>
+      <Label>{label}</Label>
+      <ContainerInput errorMessage={errorMessage} style={{width: width}}>
+        {icon}
+        <InputStyle {...otherProps}></InputStyle>
+      </ContainerInput>
+      <ErrorMessage>{errorMessage}</ErrorMessage>
+    </>
   );
 }
 

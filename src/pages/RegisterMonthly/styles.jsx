@@ -98,6 +98,7 @@ export const Submit = styled.input`
   border-radius: 15px;
   color: #fff;
   background-color: #4c5df1;
+  cursor: pointer;
 `;
 
 export const Select = styled.select`

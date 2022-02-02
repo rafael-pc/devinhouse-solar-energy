@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaRegEnvelope, FaLock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-import Input from "../../components/Input";
+import InputLogin from "../../components/InputLogin"
 import * as yup from "yup";
 
 import {
@@ -20,7 +20,6 @@ import {
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const [erros, setErrors] = useState({});
 
   function handleSubmit(event) {
@@ -71,7 +70,7 @@ function Login() {
           <Text>Seja bem vindo</Text>
 
           <Form onSubmit={handleSubmit}>
-            <Input
+            <InputLogin
               icon={<FaRegEnvelope className="icon" />}
               type="text"
               value={email}
@@ -80,9 +79,9 @@ function Login() {
                 setEmail(event.target.value);
               }}
               errorMessage={erros.email}
-            ></Input>
+            ></InputLogin>
 
-            <Input
+            <InputLogin
               icon={<FaLock className="icon" />}
               type="password"
               value={password}
@@ -91,7 +90,7 @@ function Login() {
                 setPassword(event.target.value);
               }}
               errorMessage={erros.password}
-            ></Input>
+            ></InputLogin>
 
             <Submit type="submit">Entrar</Submit>
           </Form>

@@ -32,6 +32,9 @@ export const ContainerContent = styled.div`
     padding: 10px;
     font-weight: bold;
   }
+  p{
+    color: #dc3545;
+  }
 
   @media only screen and (max-width: 600px) {
     width: 100vw;
@@ -63,6 +66,7 @@ export const Form = styled.form`
 
 export const Checkbox = styled.input`
   margin-top: 15px;
+  margin-right: 10px;
 `;
 
 export const Submit = styled.button`
@@ -75,4 +79,5 @@ export const Submit = styled.button`
   border-radius: 15px;
   color: #fff;
   background-color: #4c5df1;
+  cursor: pointer;
 `;

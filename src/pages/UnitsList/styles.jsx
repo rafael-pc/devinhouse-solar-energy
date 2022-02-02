@@ -18,6 +18,30 @@ export const ContainerContent = styled.div`
   height: 100vh;
   background-color: #fafafa;
 
+  .link {
+    width: 150px;
+    margin-top: 100px;
+    margin-left: 78%;
+    border-radius: 15px;
+    color: #fff;
+    cursor: pointer;
+
+    @media only screen and (max-width: 1400px) {
+      display: block;
+      margin-left: 0;
+      margin: 0 auto;
+      margin-bottom: 80px;
+      margin-top: 80px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      display: block;
+      margin-left: 0;
+      margin: 0 auto;
+      margin-bottom: 80px;
+    }
+  }
+
   h3 {
     margin-left: 130px;
     padding: 20px;
@@ -28,7 +52,7 @@ export const ContainerContent = styled.div`
 
   @media only screen and (max-width: 600px) {
     width: 100vw;
-    h3{
+    h3 {
       margin-left: 0;
       text-align: center;
     }
@@ -68,6 +92,7 @@ export const Edit = styled.button`
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   color: #fff;
   background-color: #8db51b;
+  cursor: pointer;
 `;
 
 export const Delete = styled.button`
@@ -78,40 +103,24 @@ export const Delete = styled.button`
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   color: #fff;
   background-color: #d82d56;
+  cursor: pointer;
 `;
 
 export const NewUnit = styled.button`
   border: none;
-  width: 150px;
   padding: 15px;
-  margin-top: 100px;
-  margin-left: 78%;
   font-weight: bold;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   color: #fff;
   background-color: #4c5df1;
-  
-  @media only screen and (max-width: 1400px) {
-    display: block;
-    margin-left: 0;
-    margin: 0 auto;
-    margin-bottom: 80px;
-    margin-top: 80px;
-  }
-
-  @media only screen and (max-width: 600px) {
-    display: block;
-    margin-left: 0;
-    margin: 0 auto;
-    margin-bottom: 80px;
-  }
+  cursor: pointer;
 `;
 
 export const THeader = styled.thead`
   font-weight: bold;
   border-bottom: 2px solid #ebebeb;
-  
+
   th {
     padding: 10px;
     background-color: #f1f1f1;
