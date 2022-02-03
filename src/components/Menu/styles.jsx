@@ -27,6 +27,10 @@ export const Logo = styled.img`
   width: 209px;
   height: 209px;
   margin-bottom: 20px;
+  
+  @media only screen and (max-width: 600px) {
+    margin-bottom: 0;
+  }
 `;
 
 export const Dashboard = styled.div`

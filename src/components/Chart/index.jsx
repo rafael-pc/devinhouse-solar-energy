@@ -19,7 +19,8 @@ const Linechart = () => {
     getData();
   }, []);
 
-  let totalJaneiro = data.reduce((total, valor) => total + valor.energia, 0) / data.length;
+  let totalJaneiro =
+    data.reduce((total, valor) => total + valor.energia, 0) / data.length;
 
   return (
     <ContainerChart>
@@ -30,7 +31,10 @@ const Linechart = () => {
           datasets: [
             {
               label: "Total de energia gerada por mês",
-              data: [totalJaneiro, 660, 650, 670, 680, 660],
+              data: [totalJaneiro, 660, 650, 673, 680, 660],
+              borderColor: ["rgba(55,81,255,1)"],
+              lineTension: 0.4,
+              borderWidth: 1,
             },
           ],
         }}
@@ -38,6 +42,15 @@ const Linechart = () => {
         width={200}
         options={{
           maintainAspectRatio: false,
+          scales:{
+            yAxes:[
+              {
+                ticks:{
+                  beginAtZero: true,
+                }
+              }
+            ]
+          }
         }}
       ></Line>
     </ContainerChart>

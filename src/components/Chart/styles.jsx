@@ -13,12 +13,13 @@ export const ContainerChart = styled.div`
   }
 
   @media only screen and (max-width: 1600px) {
-    width: 50%;
+    margin-top: 40px;
+    width: 60%;
     height: 40%;
   }
   @media only screen and (max-width: 950px) {
-    width: 60%;
+    width: 70%;
     height: 35%;
-    padding-bottom: 15px;
+    padding-bottom: 30px;
   }
 `;

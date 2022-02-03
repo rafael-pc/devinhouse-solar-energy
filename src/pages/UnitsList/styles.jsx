@@ -19,7 +19,7 @@ export const ContainerContent = styled.div`
   background-color: #fafafa;
 
   .link {
-    width: 150px;
+    width: 120px;
     margin-top: 100px;
     margin-left: 78%;
     border-radius: 15px;
@@ -33,7 +33,6 @@ export const ContainerContent = styled.div`
       margin-bottom: 80px;
       margin-top: 80px;
     }
-
     @media only screen and (max-width: 600px) {
       display: block;
       margin-left: 0;

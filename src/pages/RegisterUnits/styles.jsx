@@ -42,9 +42,9 @@ export const ContainerContent = styled.div`
       margin-left: 0;
       padding: 20px;
       text-align: center;
+      font-size: 1.1em;
     }
     label {
-      margin-top: 0;
       padding: 0;
     }
   }
@@ -74,7 +74,8 @@ export const Submit = styled.button`
   border: none;
   width: 150px;
   padding: 15px;
-  margin-top: 20px;
+  margin-top: 50px;
+  margin-bottom: 20px;
   font-weight: bold;
   border-radius: 15px;
   color: #fff;
