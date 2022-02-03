@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, ContainerContent, Form, Checkbox, Submit } from "./styles";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import Header from "../../components/Header";
 import Menu from "../../components/Menu";
@@ -8,10 +8,7 @@ import Input from "../../components/Input";
 import axios from "axios";
 import * as yup from "yup";
 
-function RegisterUnits() {
-  
-  const url = "http://localhost:4000/unidades";
-  
+function EditUnits() {
   const [erros, setErrors] = useState({});
   const [data, setData] = useState({
     apelido: "",
@@ -21,42 +18,53 @@ function RegisterUnits() {
     status: "inativo",
   });
 
-  if(data.status === "on"){
-    setData(data.status = "ativo")
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    function getData() {
+      axios
+        .get(`http://localhost:4000/unidades/${id}`)
+        .then((resp) => setData(resp.data));
+    }
+    getData();
+  }, [id]);
+
+  if (data.status === "on") {
+    setData((data.status = "ativo"));
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-   
 
-      let currentErros = {};
+    let currentErros = {};
 
-      if (!data.apelido) {
-        currentErros.apelido = "Apelido é obrigatório.";
-      }
-      if (!data.local) {
-        currentErros.local = "Local é obrigatório.";
-      }
-      if (!data.marca) {
-        currentErros.marca = "Marca é obrigatória.";
-      }
-      if (!data.modelo) {
-        currentErros.modelo = "Modelo é obrigatório.";
-      }
-      
-      setErrors(currentErros);
-  
-      let addressFormData = {
-        apelido: data.apelido,
-        local: data.local,
-        marca: data.marca,
-        modelo: data.modelo,
-      };
-  
-      addressSchema.isValid(addressFormData).then((valid) => {
-        if (valid === true) {
-          axios
-          .post(url, {
+    if (!data.apelido) {
+      currentErros.apelido = "Apelido é obrigatório.";
+    }
+    if (!data.local) {
+      currentErros.local = "Local é obrigatório.";
+    }
+    if (!data.marca) {
+      currentErros.marca = "Marca é obrigatória.";
+    }
+    if (!data.modelo) {
+      currentErros.modelo = "Modelo é obrigatório.";
+    }
+
+    setErrors(currentErros);
+
+    let addressFormData = {
+      apelido: data.apelido,
+      local: data.local,
+      marca: data.marca,
+      modelo: data.modelo,
+    };
+
+    addressSchema.isValid(addressFormData).then((valid) => {
+      if (valid === true) {
+        axios
+          .put(`http://localhost:4000/unidades/${id}`, {
             apelido: data.apelido,
             local: data.local,
             marca: data.marca,
@@ -65,12 +73,10 @@ function RegisterUnits() {
           })
           .then((resp) => resp.data);
 
-          history("/units");
-        }
-      });
+        navigate("/units");
+      }
+    });
   }
-
-  const history = useNavigate();
 
   const addressSchema = yup.object().shape({
     apelido: yup.string().required(),
@@ -93,6 +99,8 @@ function RegisterUnits() {
         <h3>Cadasto de Unidade Geradora</h3>
         <Form onSubmit={handleSubmit}>
           <Input
+            value={data.apelido}
+            name={"dddd"}
             width={"50%"}
             label="Apelido"
             onChange={(e) => handle(e)}
@@ -100,33 +108,36 @@ function RegisterUnits() {
             id="apelido"
             errorMessage={erros.apelido}
           ></Input>
-   
+
           <Input
+            value={data.local}
             label="Local"
             onChange={(e) => handle(e)}
             type="text"
             id="local"
             errorMessage={erros.local}
           ></Input>
-     
+
           <Input
+            value={data.marca}
             label="Marca"
             onChange={(e) => handle(e)}
             type="text"
             id="marca"
             errorMessage={erros.marca}
           ></Input>
-        
+
           <Input
+            value={data.modelo}
             label="Modelo"
             onChange={(e) => handle(e)}
             type="text"
             id="modelo"
             errorMessage={erros.modelo}
           ></Input>
-       
+
           <label>
-            <Checkbox onChange={(e) => handle(e)} type="checkbox" id="status" />
+            <Checkbox onChange={(e) => handle(e)} type="checkbox" id="status"/>
             Ativo
           </label>
           <Submit type="submit">Salvar</Submit>
@@ -136,4 +147,4 @@ function RegisterUnits() {
   );
 }
 
-export default RegisterUnits;
+export default EditUnits;

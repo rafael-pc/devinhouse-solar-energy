@@ -48,7 +48,7 @@ export const ContainerInput = styled.div`
   background-color: #fff;
 
   &:hover {
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 1px;
+    box-shadow: ${(props) => (props.errorMessage ? "#dc3545" : "rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 1px")};
   }
   .icon {
     width: 70px;

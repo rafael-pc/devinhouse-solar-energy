@@ -13,7 +13,7 @@ export const InputStyle = styled.input`
   background-color: #fff;
 
   &:hover {
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 1px;
+    box-shadow: ${(props) => (props.errorMessage ? "#dc3545" : "rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 1px")};
   }
 
   .icon {
@@ -21,10 +21,10 @@ export const InputStyle = styled.input`
     height: 30px;
     color: #a8a8a8;
   }
+
   @media only screen and (max-width: 600px) {
     height: 35px;
   }
-
   @media only screen and (max-width: 400px) {
     .envelope-icon {
       display: none;
@@ -39,7 +39,8 @@ export const ErrorMessage = styled.div`
 `;
 
 export const Label = styled.div`
-  padding: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   font-weight: bold;
   font-size: 1.1em;
 

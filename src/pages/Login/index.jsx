@@ -28,10 +28,10 @@ function Login() {
     let currentErros = {};
 
     if (!email) {
-      currentErros.email = "E-mail é obrigatorio.";
+      currentErros.email = "E-mail é obrigatório.";
     }
     if (!password) {
-      currentErros.password = "Senha é obrigatoria.";
+      currentErros.password = "Senha é obrigatória.";
     }
     if (password.length < 8 && password.length > 0) {
       currentErros.password =

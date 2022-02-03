@@ -71,7 +71,13 @@ function Register() {
                 <td>{unit.marca}</td>
                 <td>{unit.modelo}W</td>
                 <td>
-                  <Edit onChange={(e) => e.target.value}>editar</Edit>
+                  <Link to={`/edit/${unit.id}`}>
+                    <Edit
+                      // onClick={() => {
+                      //   editUnit(unit);
+                      // }}
+                    >editar</Edit>
+                  </Link>
                 </td>
                 <td>
                   <Delete
@@ -87,7 +93,7 @@ function Register() {
           </tbody>
         </Table>
 
-        <Link to="/units/:id" className="link">
+        <Link to="/register_units/" className="link">
           <NewUnit>Nova Unidade</NewUnit>
         </Link>
       </ContainerContent>
