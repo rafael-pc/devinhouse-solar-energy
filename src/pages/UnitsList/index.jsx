@@ -72,11 +72,7 @@ function Register() {
                 <td>{unit.modelo}W</td>
                 <td>
                   <Link to={`/edit/${unit.id}`}>
-                    <Edit
-                      // onClick={() => {
-                      //   editUnit(unit);
-                      // }}
-                    >editar</Edit>
+                    <Edit>editar</Edit>
                   </Link>
                 </td>
                 <td>
