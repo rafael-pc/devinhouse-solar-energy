@@ -7,6 +7,7 @@ export const HeaderStyle = styled.div`
   justify-content: left;
   align-items: center;
   padding-left: 40px;
+  padding: 30px;
   background-color: #fff;
 
   h1 {
@@ -19,6 +20,7 @@ export const HeaderStyle = styled.div`
   @media only screen and (max-width: 600px) {
     justify-content: center;
     padding-left: 0;
+    padding: 30px;
     font-size: 0.9em;
   }
 `;

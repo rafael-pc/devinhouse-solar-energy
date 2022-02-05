@@ -110,7 +110,6 @@ export const NewUnit = styled.button`
   padding: 15px;
   font-weight: bold;
   border-radius: 15px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   color: #fff;
   background-color: #4c5df1;
   cursor: pointer;
