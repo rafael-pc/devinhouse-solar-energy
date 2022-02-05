@@ -13,10 +13,10 @@ function Dashboard() {
   useEffect(() => {
     async function energyAPI() {
       try {
-        const response = await axios.get(`http://localhost:4000/unidades`);
+        const response = await axios.get("http://localhost:4000/unidades");
         setUnits(response.data);
-      } catch (err) {
-        alert(err);
+      } catch (error) {
+        alert("Falha ao carregar API: " + error);
       }
     }
     energyAPI();

@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Header from "../../components/Header";
 import Menu from "../../components/Menu";
 import Input from "../../components/Input";
+
 import axios from "axios";
 import * as yup from "yup";
 
@@ -22,10 +23,13 @@ function EditUnits() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    function getData() {
-      axios
-        .get(`http://localhost:4000/unidades/${id}`)
-        .then((resp) => setData(resp.data));
+    async function getData() {
+      try {
+        const response = await axios.get(`http://localhost:4000/unidades/${id}`);
+        setData(response.data);
+      } catch (error) {
+        alert("Falha ao carregar API: " + error);
+      }
     }
     getData();
   }, [id]);

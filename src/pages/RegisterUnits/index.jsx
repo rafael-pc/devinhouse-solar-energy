@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
 import Menu from "../../components/Menu";
 import Input from "../../components/Input";
+
 import axios from "axios";
 import * as yup from "yup";
 
@@ -27,7 +28,6 @@ function RegisterUnits() {
 
   function handleSubmit(e) {
     e.preventDefault();
-   
 
       let currentErros = {};
 

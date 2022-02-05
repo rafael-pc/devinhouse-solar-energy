@@ -8,39 +8,65 @@ import {
   Select,
 } from "./styles";
 
-import axios from "axios";
 import Menu from "../../components/Menu";
 import Header from "../../components/Header";
+
+import axios from "axios";
+import * as yup from "yup";
 
 function RegisterMonthly() {
   const [units, setUnits] = useState([]);
 
   useEffect(() => {
-    function getData() {
-      axios
-        .get("http://localhost:4000/unidades")
-        .then((resp) => setUnits(resp.data));
+    async function getData() {
+      try {
+        const response = await axios.get("http://localhost:4000/unidades");
+        setUnits(response.data);
+      } catch (error) {
+        alert("Falha ao carregar API: " + error);
+      }
     }
     getData();
   }, []);
 
-  const url = "http://localhost:4000/geracoes";
   const [data, setData] = useState({
     unidade: "",
     date: "",
-    energy: "",
+    energia: "",
   });
-
+  
   function handleSubmit(e) {
     e.preventDefault();
-    axios
-      .post(url, {
-        unidade: data.unidade,
-        date: data.date,
-        energia: parseInt(data.energia),
-      })
-      .then((resp) => resp.data);
+    
+    let addressFormData = {
+      unidade: data.unidade,
+      date: data.date,
+      energia: data.energia,
+    };
+
+    const url = "http://localhost:4000/geracoes";
+
+    addressSchema.isValid(addressFormData).then((valid) => {
+      if (valid === true) {
+        axios
+          .post(url, {
+            unidade: data.unidade,
+            date: data.date,
+            energia: parseInt(data.energia),
+          })
+          .then((resp) => resp.data);
+        alert("Cadasto realizado");
+      } else {
+        alert("Todos os campos devem ser preenchidos");
+      }
+    });
   }
+
+  const addressSchema = yup.object().shape({
+    unidade: yup.string().required(),
+    date: yup.string().required(),
+    energia: yup.string().required(),
+  });
 
   function handle(e) {
     const newData = { ...data };
@@ -75,7 +101,7 @@ function RegisterMonthly() {
 
           <label>Mês/ano</label>
           <Input
-            type="date"
+            type="month"
             onChange={(e) => handle(e)}
             id="date"
             className="date"
