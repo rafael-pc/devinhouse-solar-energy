@@ -10,16 +10,16 @@ Projeto utilizando React, uma aplicação protótipo para o gerenciamento de ene
 ## Instalação
 <br>
 
-### `npm install`
+### `npm install` ou `yarn install`
 Para editar o código instale as dependencias do React.
 
-### `npm start`
+### `npm start` ou `yarn start`
 
 Para usar o app em modo de desenvolvimento
 abra [http://localhost:3000](http://localhost:3000) e visualize no seu navegador. 
 
 
-### `npm run server`
+### `npm run server` ou `yarn add server`
 Para ativar o servidor local na porta [http://localhost:4000](http://localhost:4000)
 
 
