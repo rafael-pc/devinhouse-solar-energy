@@ -19,7 +19,7 @@ Para usar o app em modo de desenvolvimento
 abra [http://localhost:3000](http://localhost:3000) e visualize no seu navegador. 
 
 
-### `npm run server` `yarn add server`
+### `npm run server` ou `yarn add server`
 Para ativar o servidor local na porta [http://localhost:4000](http://localhost:4000)
 
 
