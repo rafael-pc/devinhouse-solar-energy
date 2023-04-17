@@ -1,12 +1,17 @@
 
 ## Documentação do Projeto
+
 <br>
 
 ### Descrição
 
 <p>Este projeto é uma aplicação web que permite o gerenciamento de unidades consumidoras e suas respectivas gerações de energia mensais. A aplicação foi desenvolvida em React, utilizando a biblioteca react-router-dom para criar rotas entre as diferentes telas. Os dados da aplicação são armazenados em um servidor json-server.</p>
 
+<br>
+
 ![tela do projeto](./src/images/solar-energy.png)<br>
+
+<br>
 
 ### Funcionalidades
 <p>A aplicação contém as seguintes funcionalidades:<p>
@@ -19,6 +24,8 @@
  - Botão Remover Unidade: Permite remover uma unidade consumidora existente.
  - Botão Editar Unidade: Permite editar uma unidade consumidora existente.
  - Tela de Lançamento de Geração Mensal: Permite cadastrar uma nova geração mensal de energia para uma unidade consumidora existente.
+
+<br>
 
 ### Requisitos
 
@@ -33,6 +40,25 @@ Para iniciar a aplicação, basta executar o seguinte comando:
 ```cmd
 npm start
 ```
+
+<p>Para executar o json-server, siga os seguintes passos:</p>
+
+1. Abra o terminal (no Windows, você pode usar o prompt de comando ou o PowerShell) e navegue até o diretório do projeto.
+
+2. Execute o seguinte comando para instalar o json-server:<p>
+
+```cmd
+npm install -g json-server
+```
+
+3. Execute o json-server com o seguinte comando:
+
+```cmd
+json-server --watch server.json --port 4000
+```
+<p>Certifique-se de usar a porta 4000, conforme configurado na aplicação.</p>
+
+<br>
 
 ### Bibliotecas Utilizadas
 
