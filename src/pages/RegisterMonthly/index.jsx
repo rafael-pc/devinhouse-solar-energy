@@ -34,10 +34,10 @@ function RegisterMonthly() {
     date: "",
     energia: "",
   });
-  
+
   function handleSubmit(e) {
     e.preventDefault();
-    
+
     let addressFormData = {
       unidade: data.unidade,
       date: data.date,
@@ -108,7 +108,12 @@ function RegisterMonthly() {
           ></Input>
 
           <label>Total Kw gerado</label>
-          <Input type="text" onChange={(e) => handle(e)} id="energia"></Input>
+          <Input 
+            label="Energia"
+            type="text" 
+            onChange={(e) => handle(e)} 
+            id="energia">
+          </Input>
 
           <Submit type="submit" value="Cadastrar"></Submit>
         </Form>

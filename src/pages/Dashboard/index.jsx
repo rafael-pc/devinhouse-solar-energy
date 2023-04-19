@@ -9,25 +9,30 @@ import Header from "../../components/Header";
 
 function Dashboard() {
   const [units, setUnits] = useState([]);
+  const [generation, setGeneration] = useState([]);
+  
 
   useEffect(() => {
     async function energyAPI() {
       try {
-        const response = await axios.get("http://localhost:4000/unidades");
-        setUnits(response.data);
+        const [unitsResponse, generationResponse] = await Promise.all([
+        axios.get("http://localhost:4000/unidades"),
+        axios.get("http://localhost:4000/geracoes")]);
+        setUnits(unitsResponse.data);
+        setGeneration(generationResponse.data);
       } catch (error) {
         alert("Falha ao carregar API: " + error);
       }
     }
     energyAPI();
-  }, []);
+  }, []);  
 
   return (
     <Container>
       <Menu />
       <Content>
         <Header title="Dashboard"></Header>
-        <Unidades data={units}></Unidades>
+        <Unidades data1={units} data2={generation}></Unidades> 
         <Linechart />
       </Content>
     </Container>

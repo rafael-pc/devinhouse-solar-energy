@@ -1,18 +1,18 @@
 import React from "react";
 import { ContainerContent, Cards } from "./styles";
 
-function Unidades({ data }) {
+function Unidades({ data1, data2 }) {
 
-  let total = data.reduce((total, valor) => total + valor.modelo, 0) / data.length;
-  let ativo = data.filter((unit) => unit.status === "ativo");
-  let inativo = data.filter((unit) => unit.status === "inativo");
+  let total = data2.reduce((total, valor) => total + valor.energia, 0) / data2.length;
+  let ativo = data1.filter((unit) => unit.status === "ativo");
+  let inativo = data1.filter((unit) => unit.status === "inativo");
 
   return (
     <ContainerContent>
       <Cards>
         <div className="card1">
           <h3>Total unidades</h3>
-          <span>{data.length}</span>
+          <span>{data1.length}</span>
         </div>
         <div className="card2">
           <h3>Unidades ativas</h3>
