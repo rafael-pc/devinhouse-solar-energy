@@ -1,12 +1,22 @@
 
-## Documentação do Projeto
-<br>
+## DevInHouse Solar Energy
 
 ### Descrição
 
 <p>Este projeto é uma aplicação web que permite o gerenciamento de unidades consumidoras e suas respectivas gerações de energia mensais. A aplicação foi desenvolvida em React, utilizando a biblioteca react-router-dom para criar rotas entre as diferentes telas. Os dados da aplicação são armazenados em um servidor json-server.</p>
 
-![tela do projeto](./src/images/solar-energy.png)<br>
+<img src="./src/images/solar-energy.png" alt="solar-energy" width="550"/>
+
+
+### Bibliotecas Utilizadas
+
+<p>As seguintes bibliotecas foram utilizadas neste projeto:</p>
+
+ - React: Biblioteca para construção de interfaces de usuário.
+ - React Router Dom: Biblioteca para criação de rotas entre as diferentes telas da aplicação.
+ - Chart.js: Biblioteca para criação de gráficos.
+ - Axios: Biblioteca para realização de requisições HTTP.
+ - Json-server: Biblioteca para criação de um servidor JSON local para armazenar os dados da aplicação.
 
 ### Funcionalidades
 <p>A aplicação contém as seguintes funcionalidades:<p>
@@ -34,12 +44,19 @@ Para iniciar a aplicação, basta executar o seguinte comando:
 npm start
 ```
 
-### Bibliotecas Utilizadas
+<p>Para executar o json-server, siga os seguintes passos:</p>
 
-<p>As seguintes bibliotecas foram utilizadas neste projeto:</p>
+1. Abra o terminal (no Windows, você pode usar o prompt de comando ou o PowerShell) e navegue até o diretório do projeto.
 
- - React: Biblioteca para construção de interfaces de usuário.
- - React Router Dom: Biblioteca para criação de rotas entre as diferentes telas da aplicação.
- - Chart.js: Biblioteca para criação de gráficos.
- - Axios: Biblioteca para realização de requisições HTTP.
- - Json-server: Biblioteca para criação de um servidor JSON local para armazenar os dados da aplicação.
+2. Execute o seguinte comando para instalar o json-server:<p>
+
+```cmd
+npm install -g json-server
+```
+
+3. Execute o json-server com o seguinte comando:
+
+```cmd
+json-server --watch server.json --port 4000
+```
+<p>Certifique-se de usar a porta 4000, conforme configurado na aplicação.</p>
