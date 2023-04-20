@@ -10,9 +10,8 @@ import axios from "axios";
 import * as yup from "yup";
 
 function RegisterUnits() {
-  
   const url = "http://localhost:4000/unidades";
-  
+
   const [erros, setErrors] = useState({});
   const [data, setData] = useState({
     apelido: "",
@@ -22,40 +21,40 @@ function RegisterUnits() {
     status: "inativo",
   });
 
-  if(data.status === "on"){
-    setData(data.status = "ativo")
+  if (data.status === "on") {
+    setData((data.status = "ativo"));
   }
 
   function handleSubmit(e) {
     e.preventDefault();
 
-      let currentErros = {};
+    let currentErros = {};
 
-      if (!data.apelido) {
-        currentErros.apelido = "Apelido é obrigatório.";
-      }
-      if (!data.local) {
-        currentErros.local = "Local é obrigatório.";
-      }
-      if (!data.marca) {
-        currentErros.marca = "Marca é obrigatória.";
-      }
-      if (!data.modelo) {
-        currentErros.modelo = "Modelo é obrigatório.";
-      }
-      
-      setErrors(currentErros);
-  
-      let addressFormData = {
-        apelido: data.apelido,
-        local: data.local,
-        marca: data.marca,
-        modelo: data.modelo,
-      };
-  
-      addressSchema.isValid(addressFormData).then((valid) => {
-        if (valid === true) {
-          axios
+    if (!data.apelido) {
+      currentErros.apelido = "Apelido é obrigatório.";
+    }
+    if (!data.local) {
+      currentErros.local = "Local é obrigatório.";
+    }
+    if (!data.marca) {
+      currentErros.marca = "Marca é obrigatória.";
+    }
+    if (!data.modelo) {
+      currentErros.modelo = "Modelo é obrigatório.";
+    }
+
+    setErrors(currentErros);
+
+    let addressFormData = {
+      apelido: data.apelido,
+      local: data.local,
+      marca: data.marca,
+      modelo: data.modelo,
+    };
+
+    addressSchema.isValid(addressFormData).then((valid) => {
+      if (valid === true) {
+        axios
           .post(url, {
             apelido: data.apelido,
             local: data.local,
@@ -65,9 +64,9 @@ function RegisterUnits() {
           })
           .then((resp) => resp.data);
 
-          history("/units");
-        }
-      });
+        history("/units");
+      }
+    });
   }
 
   const history = useNavigate();
@@ -93,14 +92,13 @@ function RegisterUnits() {
         <h3>Cadasto de Unidade Geradora</h3>
         <Form onSubmit={handleSubmit}>
           <Input
-            width={"50%"}
             label="Apelido"
             onChange={(e) => handle(e)}
             type="text"
             id="apelido"
             errorMessage={erros.apelido}
           ></Input>
-   
+
           <Input
             label="Local"
             onChange={(e) => handle(e)}
@@ -108,7 +106,7 @@ function RegisterUnits() {
             id="local"
             errorMessage={erros.local}
           ></Input>
-     
+
           <Input
             label="Marca"
             onChange={(e) => handle(e)}
@@ -116,7 +114,7 @@ function RegisterUnits() {
             id="marca"
             errorMessage={erros.marca}
           ></Input>
-        
+
           <Input
             label="Modelo"
             onChange={(e) => handle(e)}
@@ -124,7 +122,7 @@ function RegisterUnits() {
             id="modelo"
             errorMessage={erros.modelo}
           ></Input>
-       
+
           <label>
             <Checkbox onChange={(e) => handle(e)} type="checkbox" id="status" />
             Ativo
