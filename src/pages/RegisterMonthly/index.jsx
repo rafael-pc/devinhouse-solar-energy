@@ -18,15 +18,27 @@ function RegisterMonthly() {
   const [units, setUnits] = useState([]);
 
   useEffect(() => {
+    let isMounted = true; // Variável para rastrear se o componente está montado ou não
+
     async function getData() {
       try {
         const response = await axios.get("http://localhost:4000/unidades");
         setUnits(response.data);
+
+        if (isMounted) {
+          // Verificar se o componente está montado antes de atualizar o estado
+          setData(response.data);
+        }
       } catch (error) {
         alert("Falha ao carregar API: " + error);
       }
     }
     getData();
+    
+     // Função de limpeza para cancelar tarefas assíncronas antes de desmontar o componente
+     return () => {
+      isMounted = false; // Marcar o componente como desmontado ao retornar a função de limpeza
+    };
   }, []);
 
   const [data, setData] = useState({
@@ -44,7 +56,7 @@ function RegisterMonthly() {
       energia: data.energia,
     };
 
-    const url = "http://localhost:4000/geracoes";
+    const url = "https://json-server-deploy.cyclic.app/geracoes";
 
     addressSchema.isValid(addressFormData).then((valid) => {
       if (valid === true) {
