@@ -48,7 +48,7 @@ function Register() {
       <Menu />
       <ContainerContent>
         <Header title="Unidades"></Header>
-        <h3>Cadasto de Unidade Geradora</h3>
+        <h3>Cadastro de Unidade Geradora</h3>
         <Table>
           <THeader>
             <tr>
