@@ -34,9 +34,8 @@ function RegisterMonthly() {
       }
     }
     getData();
-    
-     // Função de limpeza para cancelar tarefas assíncronas antes de desmontar o componente
-     return () => {
+    // Função de limpeza para cancelar tarefas assíncronas antes de desmontar o componente
+    return () => {
       isMounted = false; // Marcar o componente como desmontado ao retornar a função de limpeza
     };
   }, []);
@@ -56,7 +55,7 @@ function RegisterMonthly() {
       energia: data.energia,
     };
 
-    const url = "https://json-server-deploy.cyclic.app/geracoes";
+    const url = "http://localhost:4000/geracoes";
 
     addressSchema.isValid(addressFormData).then((valid) => {
       if (valid === true) {
@@ -91,7 +90,6 @@ function RegisterMonthly() {
       <Menu />
       <ContainerContent>
         <Header title="Lançamento de geração mensal"></Header>
-
         <Form
           onSubmit={(e) => {
             handleSubmit(e);
